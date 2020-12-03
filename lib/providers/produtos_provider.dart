@@ -35,6 +35,7 @@ class Produtos with ChangeNotifier {
               id: id,
               nome: produto.nome,
               valor: produto.valor,
+              quantidadeEstoque: produto.quantidadeEstoque,
               urlImage: produto.urlImage));
     }
     notifyListeners();

@@ -22,6 +22,7 @@ class ProdutosLista extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
+        padding: EdgeInsets.all(10.0),
         itemCount: produtos.count,
         itemBuilder: (context, i) => ProdutoTile(produtos.byIndex(i)),
       ),
