@@ -14,7 +14,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
         title: Text('Tela Inicial'),
       ),
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(40.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: [

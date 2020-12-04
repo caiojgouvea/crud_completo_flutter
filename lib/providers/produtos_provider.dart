@@ -5,7 +5,7 @@ import 'package:controle_de_pedidos_dois/models/produto.dart';
 import 'package:flutter/material.dart';
 
 class Produtos with ChangeNotifier {
-  Map<String, Produto> _items = {...PRODUTOS};
+  Map<String, Produto> _items = {...produtos};
 
   List<Produto> get all {
     return [..._items.values];

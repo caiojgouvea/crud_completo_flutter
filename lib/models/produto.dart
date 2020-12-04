@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Produto {
-  final String id;
-  final String nome;
-  final double valor;
-  final String urlImage;
-  final String quantidadeEstoque;
+  String id;
+  String nome;
+  double valor;
+  String urlImage;
+  String quantidadeEstoque;
 
-  const Produto(
+  Produto(
       {this.id,
       this.quantidadeEstoque,
       @required this.nome,

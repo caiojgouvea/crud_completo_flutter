@@ -1,14 +1,28 @@
+import 'package:controle_de_pedidos_dois/models/item_pedido.dart';
 import 'package:flutter/material.dart';
 
 class Pedido {
-  final String id;
-  final double valorTotal;
-  final String nomeCliente;
-  final String dataPedido;
+  String id;
+  double valorTotal;
+  String nomeCliente;
+  String dataPedido;
+  List<ItemPedido> items;
 
-  const Pedido(
+  Pedido(
       {this.id,
-      @required this.valorTotal,
+      this.valorTotal,
       @required this.nomeCliente,
-      @required this.dataPedido});
+      @required this.dataPedido,
+      this.items});
+
+  double get valorTotalPedido {
+    double valor = 0;
+    if (items != null) {
+      valor = items
+          .map((e) => e.quantidade * e.produto.valor)
+          .reduce((i, f) => i + f);
+    } else
+      valor = this.valorTotal;
+    return valor;
+  }
 }

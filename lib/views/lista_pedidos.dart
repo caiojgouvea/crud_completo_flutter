@@ -1,3 +1,4 @@
+import 'package:controle_de_pedidos_dois/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:controle_de_pedidos_dois/providers/pedidos_provider.dart';
@@ -19,7 +20,9 @@ class _PedidoListagemState extends State<PedidoListagem> {
         actions: [
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.PEDIDO_FORM);
+            },
           )
         ],
       ),

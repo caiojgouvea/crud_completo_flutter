@@ -1,5 +1,8 @@
+import 'package:controle_de_pedidos_dois/providers/itemPedido_provider.dart';
+import 'package:controle_de_pedidos_dois/views/listaProdutosConsulta.dart';
 import 'package:controle_de_pedidos_dois/views/lista_pedidos.dart';
 import 'package:controle_de_pedidos_dois/views/lista_produtos.dart';
+import 'package:controle_de_pedidos_dois/views/pedido_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:controle_de_pedidos_dois/providers/produtos_provider.dart';
@@ -20,7 +23,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => Produtos(),
         ),
-        ChangeNotifierProvider(create: (context) => Pedidos())
+        ChangeNotifierProvider(create: (context) => Pedidos()),
+        ChangeNotifierProvider(create: (context) => ItemsPedido()),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -31,6 +35,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.PRODUTO_LISTAGEM: (_) => ProdutosLista(),
           AppRoutes.PRODUTO_FORM: (_) => ProdutoForm(),
           AppRoutes.PEDIDO_LISTAGEM: (_) => PedidoListagem(),
+          AppRoutes.PEDIDO_FORM: (_) => PedidoForm(),
+          AppRoutes.PRODUTO_CONSULTA: (_) => ProdutoConsulta(),
         },
       ),
     );
