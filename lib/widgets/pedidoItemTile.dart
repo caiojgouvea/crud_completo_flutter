@@ -1,5 +1,7 @@
 import 'package:controle_de_pedidos_dois/models/item_pedido.dart';
+import 'package:controle_de_pedidos_dois/providers/pedidos_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PedidoItemTile extends StatelessWidget {
   final ItemPedido pedidoItem;

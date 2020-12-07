@@ -1,4 +1,5 @@
 import 'package:controle_de_pedidos_dois/data/pedidosCadastrados.dart';
+import 'package:controle_de_pedidos_dois/models/item_pedido.dart';
 import 'package:controle_de_pedidos_dois/models/pedido.dart';
 import 'package:flutter/material.dart';
 
@@ -15,5 +16,12 @@ class Pedidos with ChangeNotifier {
 
   Pedido byIndex(int i) {
     return _items.elementAt(i);
+  }
+
+  void remove(Pedido pedido, ItemPedido item) {
+    if (pedido != null) {
+      pedido.items.remove(item);
+    }
+    notifyListeners();
   }
 }

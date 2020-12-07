@@ -17,7 +17,7 @@ class Pedido {
 
   double get valorTotalPedido {
     double valor = 0;
-    if (items != null) {
+    if (items != null && items.isNotEmpty) {
       valor = items
           .map((e) => e.quantidade * e.produto.valor)
           .reduce((i, f) => i + f);

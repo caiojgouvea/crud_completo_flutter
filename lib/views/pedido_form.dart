@@ -22,6 +22,7 @@ class _PedidoFormState extends State<PedidoForm> {
       dataPedido: null,
       items: <ItemPedido>[]);
   Produto _produto = Produto(nome: '', valor: null, urlImage: '');
+  Map<String, String> _campos = {};
 
   void _loadPedido(Pedido pedidoRecebido, Produto produtoRecebido) {
     if (pedidoRecebido != null) {
@@ -32,6 +33,14 @@ class _PedidoFormState extends State<PedidoForm> {
     } else if (produtoRecebido != null) {
       _produto = produtoRecebido;
     }
+  }
+
+  void _flushCampos() {
+    _produto = Produto(nome: null, valor: null, urlImage: '');
+    valorController.text = '';
+    nomeProdutoController.text = '';
+    valorTotalController.text = '';
+    _campos['quantidade'] = '';
   }
 
   void _carregaFormProduto(Produto produto) {
@@ -112,6 +121,7 @@ class _PedidoFormState extends State<PedidoForm> {
                   decoration: InputDecoration(
                     labelText: 'Quantidade:',
                   ),
+                  onSaved: (value) => _campos['quantidade'] = value,
                   onChanged: (value) {
                     if (_produto != null) {
                       setState(() {
@@ -132,7 +142,18 @@ class _PedidoFormState extends State<PedidoForm> {
                 Container(
                   padding: EdgeInsets.only(top: 10),
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _form.currentState.save();
+                      ItemPedido item = ItemPedido(
+                          produto: _produto,
+                          pedido: _pedido,
+                          quantidade: int.parse(_campos['quantidade']));
+                      _form.currentState.reset();
+                      setState(() {
+                        _pedido.items.add(item);
+                        _flushCampos();
+                      });
+                    },
                     color: Colors.green,
                     child: Text('Adicionar'),
                   ),

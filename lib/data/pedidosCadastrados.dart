@@ -1,4 +1,5 @@
 import 'package:controle_de_pedidos_dois/data/itemPedidoCadastrados.dart';
+import 'package:controle_de_pedidos_dois/models/item_pedido.dart';
 import 'package:controle_de_pedidos_dois/models/pedido.dart';
 
 List<Pedido> pedidos = [
@@ -12,10 +13,12 @@ List<Pedido> pedidos = [
     id: '2',
     nomeCliente: 'Maria Lurdes',
     dataPedido: '04-12-2020',
+    items: <ItemPedido>[],
   ),
   Pedido(
     id: '3',
     nomeCliente: 'Alvino Cruz',
     dataPedido: '07-12-2020',
+    items: <ItemPedido>[],
   ),
 ];
