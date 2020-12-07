@@ -37,4 +37,20 @@ List<ItemPedido> itensPedido = [
             'https://img2.gratispng.com/20180909/wir/kisspng-headphones-microphone-portable-network-graphics-he-headset-transparent-png-clip-art-image-gallery-yop-5b95e1a7b48370.0275816315365492877394.jpg'),
     quantidade: 13,
   ),
+  ItemPedido(
+    id: '3',
+    pedido: Pedido(
+      id: '3',
+      nomeCliente: 'Maria Lurdes',
+      valorTotal: 993,
+      dataPedido: '04-12-2020',
+    ),
+    produto: Produto(
+        id: '2',
+        nome: 'Monitor',
+        valor: 31.0,
+        quantidadeEstoque: '35',
+        urlImage: ''),
+    quantidade: 13,
+  ),
 ];

@@ -1,5 +1,4 @@
 import 'package:controle_de_pedidos_dois/models/produto.dart';
-import 'package:controle_de_pedidos_dois/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class ProdutoConsultaTile extends StatelessWidget {
@@ -25,7 +24,9 @@ class ProdutoConsultaTile extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.check),
                 color: Colors.blue,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop(produto);
+                },
               ),
             ],
           ),
